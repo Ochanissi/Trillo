@@ -127,7 +127,7 @@
 // SIDE NAVIGATION
 .side-nav {
     font-size: 1.4rem;
-    list-style-type: none;
+    list-style: none;
     margin-top: 3.5rem;
 
 
@@ -191,7 +191,7 @@
 // LEGAL TEXT
 .legal {
     font-size: 1.2rem;
-    color: var(--color-light-grey-4);
+    color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
 }
@@ -241,7 +241,7 @@
     &__location {
         font-size: 1.2rem;
         display: flex;
-        align-items: center;
+        vertical-align: center;
     }
 
     &__icon-location {
@@ -336,7 +336,7 @@
 .list {
     list-style: none;
     margin: 3rem 0;
-    padding: 3rem;
+    padding: 3rem 0;
     border-top: var(--line);
     border-bottom: var(--line);
     
@@ -383,8 +383,8 @@
         margin-right: auto;
     }
 
-    &__friend {
-
+    &__friends {
+        display: flex;
     }
 
     &__photo {
@@ -417,8 +417,6 @@
     }
 
     &__user {
-        font-size: 1.1rem;
-
         display: flex;
         align-items: center;
     }
@@ -470,3 +468,68 @@
     }
 }
 
+//////////////////////////////////////
+// CALL TO ACTION
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+
+//////////////////////////////////////
+// CALL TO ACTION
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & > * {
+        display: inline-block;
+        height: 100%;
+        // width: 100%;
+        transition: all .2s;
+    }
+
+    &__visible {
+        padding: 2rem 7.5rem;
+    }
+
+    &__invisible {
+        position: absolute;
+        padding: 2rem 0;
+        width: 100%;
+        left: 0;
+        top: -100%;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
